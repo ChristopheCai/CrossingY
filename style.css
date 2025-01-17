@@ -20,12 +20,47 @@ body {
     height: 400px;
     background: #ccc;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
     gap: 10px;
     padding: 10px;
 }
 
-.zone {
+.menu {
+    position: relative;
+}
+
+.menu .select {
+    display: none;
+    position: absolute;
+    left: 105%;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu.active .select {
+    display: block; 
+}
+
+.menu.active .select:nth-child(1) {
+    top: 0; 
+}
+
+.menu.active .select:nth-child(2) {
+    top: 34px; 
+}
+
+.menu.active .select:nth-child(3) {
+    top: 68px;
+}
+
+.menu.active .select:nth-child(4) {
+    top: 102px; 
+}
+
+.box {
     background: #eee;
     border: 2px solid #999;
     border-radius: 5px;
@@ -37,16 +72,9 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-.zone.active {
+.select.active {
     background: #ffa500;
     color: #fff;
-}
-
-.instructions {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #333;
-    text-align: center;
 }
 
 .output {
@@ -62,4 +90,9 @@ body {
     min-height: 50px;
     background: #fff;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu.active {
+    background: #c8c8c8;
+    color: #fff;
 }
